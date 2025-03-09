@@ -21,23 +21,29 @@ function previewImage(event) {
 }
 
 
-function uploadImage(event) {
-    let formData = new FormData();
-    formData.append("image", uploadedImage);
+async function uploadImage(event) {
+    if (!uploadedImage) {
+        alert("Please select an image to upload.");
+        return;
+    }
 
-    fetch("http://127.0.0.1:5000/predict", { 
-        method: "POST",
-        body: formData
-    })
-    .then(response => response.json())
-    .then(data => {
-        document.getElementById("prediction").innerText = data.prediction;
-        
-        if (data.image) {
-            let outputImg = document.getElementById("outputImage");
-            outputImg.src = "data:image/png;base64," + data.image;
-            outputImg.style.display = "block";
+    let formData = new FormData();
+    formData.append("file", uploadedImage);
+
+    try {
+        const response = await fetch("http://127.0.0.1:8000/predict", {
+            method: "POST",
+            body: formData
+        });
+
+        const data = await response.json();
+        if (data.image_url) {
+            document.getElementById("outputImage").src = data.image_url + "?t=" + new Date().getTime();
+            document.getElementById("outputImage").style.display = "block";
+        } else {
+            alert("Error processing image");
         }
-    })
-    .catch(error => console.error("Error:", error));
+    } catch (error) {
+        console.error("Error:", error);
+    }
 }
