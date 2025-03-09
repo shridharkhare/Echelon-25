@@ -1,0 +1,12 @@
+.contiainer {
+    max-width: 800px;
+}
+header {
+    text-align: center;
+    margin-top: 25px;
+}
+
+.form  input {
+    border: 1px solid var(--contrast);
+    border-radius: 5px;
+}

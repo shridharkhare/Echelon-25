@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>P&ID Analysis Tool</title>
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <script src="https://kit.fontawesome.com/43a2678f12.js" crossorigin="anonymous" defer></script>
+
+    <link rel="stylesheet" href="./styles/index.css">
+    <link rel="stylesheet" href="./styles/master.css">
+    <link rel="stylesheet" href="./styles/lobby.css">
+
+
+    <script type="module" src="./scripts/index.js" defer></script>
+    <script type="module" src="./scripts/theme.js" defer></script>
+    <script type="module" src="./scripts/lobby.js" defer></script>
+</head>
+
+<body>
+
+    <button
+        class="theme-button"
+        id="theme-button"
+        aria-label="Switch theme"
+        data-tooltip="Switch theme"
+        data-placement="left">
+        <i class="fa-solid"></i>
+    </button>
+
+    <header class="container">
+        <h1>P&ID Analysis Tool</h1>
+        <p>Upload a P&ID image to detect pipeline elements, identify connections, and extract tags.</p>
+    </header>
+
+    <main class="container form">
+
+        <div class="container upload-section">
+            <label for="fileInput">Choose an image file:</label>
+            <input type="file" id="imageInput" accept="image" required>
+            <p>Max file size: 5MB</p>
+            <button type="submit" id="uploadButton"> Analyze</button>
+        </div>
+
+        <div class="container preview-section">
+            <h3>Preview </h3>
+            <div class="image-container">
+                <img src="" alt="previewImage" id="preview">
+            </div>
+        </div>
+
+    </main>
+
+    <div class="container results-section">
+        <h3>Results</h3>
+        <img id="outputImage" style="display:none;">
+        <h3>Detected Objects</h3>
+        <p id="prediction"></p>
+    </div>
+
+</body>
+
+</html>

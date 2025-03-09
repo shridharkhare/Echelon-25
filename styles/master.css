@@ -1,0 +1,28 @@
+*{
+    scroll-behavior: smooth;
+}
+
+.hidden {
+    display: none;
+}
+
+
+hgroup:after {
+    display: block;
+    max-width: 100px;
+    margin-top: 1rem;
+    border-bottom: .125rem solid var(--primary);
+    content: "";
+}
+
+.theme-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 0;
+    z-index: 100;
+}
+

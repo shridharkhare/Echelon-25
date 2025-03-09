@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <title>P&ID Analysis Tool</title>
+        <!-- FontAwesome -->
+        <script
+            src="https://kit.fontawesome.com/43a2678f12.js"
+            crossorigin="anonymous"
+            defer
+        ></script>
+
+        <!-- Styles -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css"
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Geologica&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./styles/index.css" />
+        <link rel="stylesheet" href="./styles/master.css" />
+    </head>
+
+    <body>
+        <!-- Mode switcher button -->
+        <button
+            class="theme-button"
+            id="theme-button"
+            aria-label="Switch theme"
+            data-tooltip="Switch theme"
+            data-placement="left"
+        >
+            <i class="fa-solid"></i>
+        </button>
+
+        <header class="hero">
+            <div class="shuffling-deck"></div>
+            <div class="hero-actions">
+                <h1>P&ID <br> Analysis Tool</h1>
+                <button class="" id="lobby-btn">Analyze a P&ID</button>
+                <a role="button" href="#how-to" class="contrast">What is P&ID?</a>
+            </div>
+        </header>
+
+        <!-- Script -->
+        <script type="module" src="./scripts/index.js" defer></script>
+    </body>
+</html>
